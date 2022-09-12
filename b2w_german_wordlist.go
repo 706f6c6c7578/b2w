@@ -230,7 +230,6 @@ var WORDS = []string{
 	"Junge",
 	"Jutta",
 	"Kabel",
-	"Kalle",
 	"Kanal",
 	"Karin",
 	"Kasse",
@@ -365,6 +364,7 @@ var WORDS = []string{
 	"Wange",
 	"Watte",
 	"Wespe",
+	"Wiege";
 	"Woche",
 	"Wolke",
 	"Wonne",
