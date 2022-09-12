@@ -134,6 +134,7 @@ var WORDS = []string{
 	"April",
 	"Aroma",
 	"Atlas",
+	"Autos",
 	"Balsa",
 	"Bauch",
 	"Bauer",
@@ -364,7 +365,6 @@ var WORDS = []string{
 	"Wange",
 	"Watte",
 	"Wespe",
-	"Wiege";
 	"Woche",
 	"Wolke",
 	"Wonne",
