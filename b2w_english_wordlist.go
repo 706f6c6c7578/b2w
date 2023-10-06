@@ -1,5 +1,5 @@
-﻿// go run b2w.go -i input file -o output file		- encode
-// go run b2w.go -d -i output file -o input file	- decode
+// go run b2w.go < input file > output file    - encode
+// go run b2w.go -d < output file > input file - decode
 
 package main
 
@@ -82,30 +82,15 @@ func (btw Bintowords) encode() {
 			fmt.Fprintf(btw.out, "%s", strings.Join(final[i:len(final)], " "))
 		}
 	}
+	fmt.Println()
 }
 
 func main() {
-	inFP := flag.String("i", "", "input file")
-	outFP := flag.String("o", "", "output file")
 	action := flag.Bool("d", false, "use -d to specify decode")
 	flag.Parse()
 
-	if *inFP == "" || *outFP == "" {
-		fmt.Printf("Usage: b2w [-d] -i input file -o output file")
-		os.Exit(1)
-	}
-
-	inFD, err := os.Open(*inFP)
-	if err != nil {
-		panic(err)
-	}
-	defer inFD.Close()
-
-	outFD, err := os.Create(*outFP)
-	if err != nil {
-		panic(err)
-	}
-	defer outFD.Close()
+	inFD := os.Stdin
+	outFD := os.Stdout
 
 	if *action == false {
 		Bintowords := Bintowords{inFD, outFD}
@@ -114,7 +99,6 @@ func main() {
 		Bintowords := Bintowords{inFD, outFD}
 		Bintowords.decode()
 	}
-
 }
 
 // WORDS is our dict to convert binary to string
