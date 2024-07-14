@@ -79,10 +79,9 @@ func (btw Bintowords) encode() {
 			// win32 ln
 			fmt.Fprintf(btw.out, "%s\r\n", strings.Join(final[i:(i+10)], " "))
 		} else {
-			fmt.Fprintf(btw.out, "%s", strings.Join(final[i:len(final)], " "))
+			fmt.Fprintf(btw.out, "%s\r\n", strings.Join(final[i:len(final)], " "))
 		}
 	}
-	fmt.Println()
 }
 
 func main() {
